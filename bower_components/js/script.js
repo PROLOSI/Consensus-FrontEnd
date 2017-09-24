@@ -114,7 +114,7 @@ $(document).on('click', '.btn-select', function (e) {
 
 $(document).on('click', function (e) {
 
-    $("#abrirmodal").on("click",function(){
+    $(".abrirmodal").on("click",function(){
         $('#edit').modal('show');
         document.getElementById("p1").innerHTML = "Usuario: "+$(this).attr("value");
     });

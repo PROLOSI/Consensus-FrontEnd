@@ -16,7 +16,7 @@
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">    
-  <link href="style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   
 </head>
 
@@ -176,18 +176,13 @@
                   <p id="p1">Hello World!</p>
       
                        <div class="form-group">
-                        <label for="exampleInputPassword1">Correo</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="exampleInputPassword1">Maximo numero de votos</label>
+                        <input type="text" class="form-control" id="maximo" placeholder="Maximo numero de votos">
                       </div>
                       <div class="form-group">
-                          <label for="exampleInputPassword1">Telefono</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <label for="exampleInputPassword1">Nombre</label>
+                          <input type="nombre" class="form-control" id="nombre_evento" placeholder="Nombre">
                         </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Activo
-                        </label>
-                      </div>
                       <button type="submit" class="btn btn-default">Actualizar</button>
                     </form>
         
@@ -226,6 +221,23 @@
                   <div class="modal-body">
 
 
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-md-12">
+                              <form method="post" action="#" id="#">
+
+                                  <div class="form-group">
+                                    <label> Agregar usuarios separados por ; </label>
+                                    <textarea class="form-control" wrap='off' rows="3" cols="40">
+                                    </textarea>
+                                  </div>
+
+                              </form>
+                          </div>
+                        </div>
+                    </div>
+
+
                         <div class="container">
                                 <div class="row">
                                   <div class="col-md-12">
@@ -239,8 +251,15 @@
                                       </form>
                                   </div>
                                 </div>
-                            </div>
+                        </div>
 
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-md-12">
+                                <button type="submit" class="btn btn-warning pull-right" style="margin-left:5px;" data-dismiss="modal" >Cargar</button>
+                              </div>
+                            </div>
+                    </div>
                   </div>
                 </div>
                 </div>
@@ -449,7 +468,7 @@
   <!-- Custom scripts for this page-->
   <script src="js/sb-admin-datatables.min.js"></script>
   <script src="js/sb-admin-charts.min.js"></script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 
   </div> <!-- FIN DEL PANEL -->
 

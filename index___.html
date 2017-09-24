@@ -114,7 +114,7 @@
 
   <!-- INICIO DE LA CREACION DE USUARIOS -->
   <div id="creacion" style="margin-left:50px; margin-right: 50px;">
-      <form class="form-horizontal">
+      <form class="form-horizontal" id="#form">
           <fieldset>
           
           <!-- Form Name -->
@@ -122,20 +122,20 @@
           
           <!-- Select Basic -->
           <div class="form-group">
-            <label class="col-md-4 control-label" for="selectbasic">Tipo Usuario</label>
-            <div class="col-md-4">
-              <select id="selectbasic" name="selectbasic" class="form-control">
-                <option value="1">Administrador</option>
-                <option value="2">Usuario normal</option>
-              </select>
-            </div>
-          </div>
           
           <!-- Text input-->
           <div class="form-group">
             <label class="col-md-4 control-label" for="nombre_user">Nombre Usuario</label>  
             <div class="col-md-4">
             <input id="nombre_user" name="nombre_user" type="text" placeholder="Nombre completo" class="form-control input-md" required="">
+              
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="nombre_user">Contraseña</label>  
+            <div class="col-md-4">
+            <input id="pass" name="pass" type="password" placeholder="Contraseña" class="form-control input-md" required="">
               
             </div>
           </div>
@@ -162,7 +162,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="btn_registrar"></label>
             <div class="col-md-8">
-              <button id="btn_registrar" name="btn_registrar" class="btn btn-success">REGISTRAR</button>
+              <button id="btn_registrar" name="btn_registrar" class="btn btn-success" onclick="insert()" >REGISTRAR</button>
               <button id="btn_cancelar" name="btn_cancelar" class="btn btn-danger">CANCELAR</button>
             </div>
           </div>
@@ -195,11 +195,11 @@
             <p id="p1">Hello World!</p>
 
                  <div class="form-group">
-                  <label for="exampleInputPassword1">Correo</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputPassword1">Usuario</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Telefono</label>
+                    <label for="exampleInputPassword1">Contraseña</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
                 <div class="checkbox">
