@@ -72,17 +72,22 @@ function adress()
       success: function(result){
         $("#nombre_user").val(""); $("#pass").val(""); $("#correo").val(""); $("#telefono").val(""); 
         alert('Usuario Insertado');
-    },
-    error: function(result) 
-    {
-      alert(JSON.stringify(result));
-    },
-      dataType: "json"
+        },
+        error: function(result) 
+        {
+          alert(JSON.stringify(result));
+        },
+          dataType: "json"
       });
 
-
+      $.post("http://api.prolosi.com:8080/createVoter",{"email": $('#correo').val(), "address": data, "voteTokens": 1},
+      function(data){
+        console.log(data)
+      });
+      $.post("http://localhost:3000/sendEmail",{"from": "prolosi@prolosi.com", "to":  $('#correo').val(), "password": $('#pass').val()},
+      function(data){
+      });
     });
-
   }
   
 
