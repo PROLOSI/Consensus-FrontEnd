@@ -4,6 +4,8 @@ $(document).ready(function() {
     $('#dos').hide();
     $('#tres').hide();
     $('#cuatro').hide();
+    $('#creacion').hide();
+    $('#edicion').hide();
 });
 
 var attempt = 3; // Variable to count number of attempts.
@@ -12,9 +14,19 @@ var attempt = 3; // Variable to count number of attempts.
 function validate(){
 var username = document.getElementById("username").value;
 var password = document.getElementById("password").value;
-if ( username == "rakhel" && password == "1113" || username == "115540243" && password == "1234"){
-window.location = "index.html"; // Redirecting to other page.
-//alert ("Login successfully");
+debugger;
+if ( username == "admin" && password == "admin" || username == "usuario1" && password == "usuario1"){
+    switch(username)
+    {
+        case "admin":
+        window.location = "index___.html"; // Redirecting to other page.
+        break;
+
+        case "usuario1":
+        window.location = "index.html"; // Redirecting to other page.
+        break;
+    }
+
 return false;
 }
 else{
@@ -22,7 +34,6 @@ attempt --;// Decrementing by one.
 alert("Tiene "+attempt+" intentos más");
 // Disabling fields after 3 attempts.
 if( attempt == 0){
-    
 document.getElementById("username").disabled = true;
 document.getElementById("password").disabled = true;
 document.getElementById("submit").disabled = true;
@@ -102,8 +113,66 @@ $(document).on('click', '.btn-select', function (e) {
 });
 
 $(document).on('click', function (e) {
+
+    $("#abrirmodal").on("click",function(){
+        $('#edit').modal('show');
+        document.getElementById("p1").innerHTML = "Usuario: "+$(this).attr("value");
+    });
+    
+
     var target = $(e.target).closest(".btn-select");
     if (!target.length) {
         $(".btn-select").removeClass("active").find("ul").hide();
     }
 });
+
+function mostrar_dashboar()
+{
+    $('#dashboard').show();
+    $('#creacion').hide();
+    $('#edicion').hide();
+}
+
+function mostrar_creacion()
+{
+    $('#creacion').show();
+    $('#dashboard').hide();
+    $('#edicion').hide();
+}
+
+function mostrar_edicion()
+{
+    $('#dashboard').hide();
+    $('#edicion').show();
+    $('#creacion').hide();
+    conexion();
+}
+
+$(".abrirmodal").on("click",function(){
+    debugger;
+    console.log($(this).attr("value"));
+    console.log(this).attr("value");
+});
+
+function openmodal()
+{
+    console.log($(this).attr("value"));
+    debugger;
+  $('#edit').modal('show');
+  document.getElementById("p1").innerHTML = nombre.value;
+}
+
+function opencerrar()
+{
+  $('#cerrar_sesion').modal('show');
+}
+
+function link_cerrar()
+{
+    window.location = "login.html";
+}
+
+function abrir_visualizador()
+{
+  $('#info_candi').modal('show');
+}
