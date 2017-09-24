@@ -113,13 +113,11 @@ $(document).on('click', '.btn-select', function (e) {
 });
 
 $(document).on('click', function (e) {
-
     $(".abrirmodal").on("click",function(){
         $('#edit').modal('show');
-        document.getElementById("p1").innerHTML = "Usuario: "+$(this).attr("value");
-        $("#userModal").val($(this).attr("value"))
-    });
-    
+        document.getElementById("p1").innerHTML = "Usuario: "+ $(this).attr("value");
+        $("#userModal").val("value",$(this).attr("value"))
+    });    
 
     var target = $(e.target).closest(".btn-select");
     if (!target.length) {
@@ -149,19 +147,14 @@ function mostrar_edicion()
     conexion();
 }
 
-$(".abrirmodal").on("click",function(){
-    debugger;
-    console.log($(this).attr("value"));
-    console.log(this).attr("value");
-});
-
+/*
 function openmodal()
 {
     console.log($(this).attr("value"));
     debugger;
   $('#edit').modal('show');
   document.getElementById("p1").innerHTML = nombre.value;
-}
+} */
 
 function opencerrar()
 {

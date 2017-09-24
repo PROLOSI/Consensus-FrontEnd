@@ -223,14 +223,20 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
         <h3 class="modal-title" id="lineModalLabel"> Usuarios </h3>
-        <input type="text" hidden="hidden" id="userModal">
+        <input type="text" hidden="hidden" id="userModal" value="">
       </div>
       <div class="modal-body">
           <legend> ¿Esta seguro que desea eliminar el usuario? </legend>
 
           <button type="submit" class="btn btn-warning pull-right" style="margin-left:5px;" >No</button>
           <button type="submit" class="btn btn-success pull-right" onclick="eliminarUsuario()">Si</button>
-  
+  <script>
+  $(".deleteModal").on("click",function(){
+        $("#userModal").val("value",$(this).attr("value"))
+    });  
+  </script>
+
+
       </div>
     </div>
     </div>
