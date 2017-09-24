@@ -6,7 +6,7 @@
       });
     });*/
 
-function conexion () 
+function conexion() 
 {
   $.get("https://prolosi.com/apiConsensus/Usuario.php",
   function(data){
@@ -28,25 +28,47 @@ function conexion ()
     });
 }
 
-function insert () 
-{
+function eliminarUsuario(){
   var jsonData = [0];
-  jsonData[0]={"id":null, "usuario": $('#nombre_user').val() , "contrasena": $('#pass').val() , "correo": $('#correo').val() , "telefono": $('#tel').val()  ,"adress": "0xasd12122", "estado": false};
-debugger;
-  $.ajax({
-    
-    type: "POST",
+  var usuario = $("#userModal").val();
+    console.log(usuario);
+    jsonData[0] = {"usuario": usuario};
+  $.ajax({    
+    type: "DELETE",
+    contentType: "application/json",
     url: "https://prolosi.com/apiConsensus/Usuario.php",
     data: JSON.stringify(jsonData),
     success: function(result){
-      alert(result);
+      alert(JSON.stringify(result));
   },
   error: function(result) 
   {
-    alert(result);
+    alert(JSON.stringify(result));
   },
-    dataType: JSON,
-    contentType: "application/json"
+    dataType: "json"
+    });
+}
+
+
+function insert() 
+{
+  var jsonData = [0];
+  jsonData[0]={"id":null, "usuario": $('#nombre_user').val() , "contrasena": $('#pass').val() , "correo": $('#correo').val() , "telefono": $('#tel').val()  ,"adress": "0xasd12122", "estado": 0};
+  console.log(JSON.stringify(jsonData));
+debugger;
+  $.ajax({    
+    type: "POST",
+    contentType: "application/json",
+    url: "https://prolosi.com/apiConsensus/Usuario.php",
+    data: JSON.stringify(jsonData),
+    success: function(result){
+      alert(JSON.stringify(result));
+  },
+  error: function(result) 
+  {
+    alert(JSON.stringify(result));
+  },
+    dataType: "json"
     });
 
 }
