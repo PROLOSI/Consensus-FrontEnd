@@ -49,11 +49,64 @@ function eliminarUsuario(){
     });
 }
 
+function adress()
+{
+
+  $.post("http://api.prolosi.com:8080/newAccount",
+  function(data){
+      
+    var jsonData = [0];
+    jsonData[0]={"id":null, "usuario": $('#nombre_user').val() , "contrasena": $('#pass').val() , "correo": $('#correo').val() , "telefono": $('#tel').val()  ,"adress": data, "estado": 0};
+    console.log(JSON.stringify(jsonData));
+  debugger;
+    $.ajax({    
+      type: "POST",
+      contentType: "application/json",
+      url: "https://prolosi.com/apiConsensus/Usuario.php",
+      data: JSON.stringify(jsonData),
+      success: function(result){
+        $("#nombre_user").val(""); $("#pass").val(""); $("#correo").val(""); $("#telefono").val(""); 
+        alert('Usuario Insertado');
+    },
+    error: function(result) 
+    {
+      alert(JSON.stringify(result));
+    },
+      dataType: "json"
+      });
+
+
+    });
+
+  }
+  
+
+  function actualizarUsuario(){
+    var jsonData = [0];
+    var usuario = $("#userModal").val();
+      console.log(usuario);
+      jsonData[0] = {"usuario": $('#user').val() , "contrasena": $('#pass').val(), "estado:":0};
+    $.ajax({    
+      type: "PUT",
+      contentType: "application/json",
+      url: "https://prolosi.com/apiConsensus/Usuario.php",
+      data: JSON.stringify(jsonData),
+      success: function(result){
+        alert(JSON.stringify(result));
+    },
+    error: function(result) 
+    {
+      alert(JSON.stringify(result));
+    },
+      dataType: "json"
+      });
+  }
 
 function insert() 
 {
+debugger;
   var jsonData = [0];
-  jsonData[0]={"id":null, "usuario": $('#nombre_user').val() , "contrasena": $('#pass').val() , "correo": $('#correo').val() , "telefono": $('#tel').val()  ,"adress": "0xasd12122", "estado": 0};
+  jsonData[0]={"id":null, "usuario": $('#nombre_user').val() , "contrasena": $('#pass').val() , "correo": $('#correo').val() , "telefono": $('#tel').val()  ,"adress": "x0sjdka", "estado": 0};
   console.log(JSON.stringify(jsonData));
 debugger;
   $.ajax({    
@@ -62,7 +115,7 @@ debugger;
     url: "https://prolosi.com/apiConsensus/Usuario.php",
     data: JSON.stringify(jsonData),
     success: function(result){
-      alert(JSON.stringify(result));
+      alert('Usuario Insertado');
   },
   error: function(result) 
   {
@@ -70,6 +123,6 @@ debugger;
   },
     dataType: "json"
     });
-
+ /* }*/
 }
 

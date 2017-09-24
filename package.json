@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Decentralized implementation that will reinforce the democratic identity of people using Blockchain technology.",
   "main": "bootstrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +12,13 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "nodemailer": "^4.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PROLOSI/Consensus-FrontEnd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PROLOSI/Consensus-FrontEnd/issues"
+  },
+  "homepage": "https://github.com/PROLOSI/Consensus-FrontEnd#readme"
 }
